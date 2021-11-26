@@ -1,0 +1,11 @@
+DESAFIO 2 HTML + CSS
+
+HTML
+1- Cite as principais tags HTML e para que servem respectivamente. Dê exemplos de situações reais de onde são usadas:
+
+
+2-  Explique com suas palavras a importância do HTML semântico:
+
+
+3- Com base nos conceitos aprendidos no exercicio anterior, crie um arquivo index.html que siga o exemplo a seguir:
+
