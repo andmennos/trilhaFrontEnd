@@ -2,8 +2,8 @@
 
 <h2>Resoluções de desafios TRILHA</h2>
 
-<h2 style="width: 20%; float: left; margin: 20px">
-    <img src="https://ik.imagekit.io/3mfjmziiqmi/Git_icon.svg_5uI-6m51X.png?updatedAt=1637941956845" alt="Logo GIT">
+<h2>
+    <img src="https://ik.imagekit.io/3mfjmziiqmi/Git_icon.svg_5uI-6m51X.png?updatedAt=1637941956845" alt="Logo GIT" style="width: 15%">
 </h2>
 
 <h2>Desafio 1 - GIT</h2>
