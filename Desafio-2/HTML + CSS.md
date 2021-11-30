@@ -67,7 +67,7 @@ As tags semânticas informão para que serve a tag, fazendo com que o navegador 
 
 #### O que é acessibilidade em páginas web?
 
-Acessibilidade em páginas web, é tornar o conteúdo e a interação da web acessível para pessoas com deficiência.
+Acessibilidade em páginas web, é tornar o conteúdo e a interação da web acessível para pessoas com deficiência e/ou certas limitações.
 O criador da página faz com que uma pessoa com deficiência tenha acesso ao conteúdo daquela página, independente se ela não enxerga, ou se possui daltonismo entre outras.
 Incluir legendas para pessoas com deficiência auditiva, não criar referências apenas visuais, não utilizar apenas feedback visuais, adaptar para leitor de tela entre diversas outras tecnologias e boas práticas.
 

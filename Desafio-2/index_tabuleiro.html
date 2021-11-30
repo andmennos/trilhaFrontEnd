@@ -2,47 +2,14 @@
 <html lang="pt-br">
 
 <html>
-
     <head>
-
         <title>INDEX_TABULEIRO</title>
         <meta charset="UTF-8">
-
-        <style>
-
-            h1 {
-                position:relative;
-                left:50px
-            }
-            .tabuleiro{
-                width: 208px;
-                height: 208px;
-                background: linear-gradient(45deg, #000 25%, #00000000 25%,#00000000 75%, #000 75%, #000 100%), 
-                linear-gradient(45deg, #000 25%, grey 25%,grey 75%, #000 75%, #000 100%);
-                -webkit-background-size: 106px 106px;
-                background-position: -1px -1px, 51px 51px;
-            }
-
-            .marcaCor1 {
-                width: 50px;
-                height:50px;
-                background:gray;
-            }
-
-            .marcaCor2 {
-                width: 50px;
-                height:50px;
-                background: black;
-            }
-
-        </style> 
+        <link rel="stylesheet" href="style.css">
     </head>
-
     <body>
-
         <h1>DIV</h1>
         <div class="tabuleiro"></div>   
-        
         <table rules=none>
             <h1>TABLE</h1>
             <tr>
@@ -51,21 +18,18 @@
                 <td class="marcaCor1"></td>
                 <td class="marcaCor2"></td>
             </tr>
-
             <tr>
                 <td class="marcaCor2"></td>
                 <td class="marcaCor1"></td>
                 <td class="marcaCor2"></td>
                 <td class="marcaCor1"></td>
             </tr>
-           
             <tr>
                 <td class="marcaCor1"></td>
                 <td class="marcaCor2"></td>
                 <td class="marcaCor1"></td>
                 <td class="marcaCor2"></td>
             </tr>
-
             <tr>
                 <td class="marcaCor2"></td>
                 <td class="marcaCor1"></td>
@@ -73,9 +37,6 @@
                 <td class="marcaCor1"></td>
                 </td>
             </tr>
-
         </table>
-
     </body>
-
 </html>
