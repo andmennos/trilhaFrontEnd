@@ -70,13 +70,13 @@
 
 <img src="https://ik.imagekit.io/3mfjmziiqmi/figura-flexbox1_1xqKmzwK6.png?updatedAt=1638275774522">
 
-[Resposta]<https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_flexbox.html>
+[Resposta](https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_flexbox.html)
 
 #### Aproveitando o menu criado, crie um arquivo index_flexbox_resp.html e torne o menu responsivo como a figura abaixo:
 
 <img src="https://ik.imagekit.io/3mfjmziiqmi/figura-responsivo_d3_IXPpFu.png?updatedAt=1638275774262">
 
-[Resposta]<https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_flexbox_resp.html>
+[Resposta](https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_flexbox_resp.html)
 
 <h1>Grid Layout</h1>
 <h2><img src="https://ik.imagekit.io/3mfjmziiqmi/grid-css_ycjM5u5xNpT.png?updatedAt=1638276323966" style="width: 20%"></h2>
@@ -132,10 +132,10 @@
 
 <img src="https://ik.imagekit.io/3mfjmziiqmi/figura-grid1_8ilS8qNjm.png?updatedAt=1638393216795">
 
-[resposta]<https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_grid_exer.html>
+[resposta](https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_grid_exer.html)
 
 #### Aproveitando o menu criado no item i, crie um arquivo index_grid_exerc_resp.html e torne-o responsivo como da figura 5. 
 
 <img src="https://ik.imagekit.io/3mfjmziiqmi/figura-grid_8K-salnff.png?updatedAt=1638275839903">
 
-[resposta]<https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_grid_exerc_resp.html>
+[resposta](https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_grid_exerc_resp.html)
