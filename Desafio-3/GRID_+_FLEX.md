@@ -15,12 +15,12 @@
 - **flex-flow:** Propriedade que junta as funções das duas propriedades acima, **flex-direction** e **flex-wrap**;
 
 - **justify-content:** Propriedade que define o alinhamento dos itens ao longo do eixo, trabalha em conjunto com os valores:
-    **flex-start:** Faz um alinhamento junto a borda de início do eixo principal;
-    **flex-end:** Faz um alinhamento junto a borda do fim do eixo principal;
-    **center:** Faz um alinhamento no centro relativo ao eixo principal;
-    **space-between:** Adiciona um espaçamento entre os itens, porém, retira os espaços nas bordas (start e end);
-    **space-around:** Adiciona um espaçamento entre os itens, incluindo entre as bordas e o elemento;
-    **space-evenly:** Adiciona um espaçamento entre os itens, distribuindo uniformemente entre todos os elementos e as bordas;
+    - **flex-start:** Faz um alinhamento junto a borda de início do eixo principal;
+    - **flex-end:** Faz um alinhamento junto a borda do fim do eixo principal;
+    - **center:** Faz um alinhamento no centro relativo ao eixo principal;
+    - **space-between:** Adiciona um espaçamento entre os itens, porém, retira os espaços nas bordas (start e end);
+    - **space-around:** Adiciona um espaçamento entre os itens, incluindo entre as bordas e o elemento;
+    - **space-evenly:** Adiciona um espaçamento entre os itens, distribuindo uniformemente entre todos os elementos e as bordas;
         Obs.:O espaço adicionado é a divisão do espaço que já existia no documento entre os elementos.
 
 
@@ -70,9 +70,13 @@
 
 <img src="https://ik.imagekit.io/3mfjmziiqmi/figura-flexbox1_1xqKmzwK6.png?updatedAt=1638275774522">
 
+[Resposta]<https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_flexbox.html>
+
 #### Aproveitando o menu criado, crie um arquivo index_flexbox_resp.html e torne o menu responsivo como a figura abaixo:
 
 <img src="https://ik.imagekit.io/3mfjmziiqmi/figura-responsivo_d3_IXPpFu.png?updatedAt=1638275774262">
+
+[Resposta]<https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_flexbox_resp.html>
 
 <h1>Grid Layout</h1>
 <h2><img src="https://ik.imagekit.io/3mfjmziiqmi/grid-css_ycjM5u5xNpT.png?updatedAt=1638276323966" style="width: 20%"></h2>
@@ -102,7 +106,7 @@
  - **align-items: end:** Alinha os itens no fim da célula verticalmente;
  - **align-items: center:** Alinha os itens no centro da célula verticalmente;
  - **align-items: stretch:** Estica os itens verticalmente até preencher toda a célula;
- - **place-items: :** Define o alinhamento em uma única declaração, horizontal e verticalmente.
+ - **place-items:** Define o alinhamento em uma única declaração, horizontal e verticalmente.
  
 #### O que é unidade fr?
 
@@ -126,4 +130,12 @@
 
 #### Crie um arquivo index_grid_exer.html e desenvolva uma tela com aparência da imagem abaixo:
 
+<img src="https://ik.imagekit.io/3mfjmziiqmi/figura-grid1_8ilS8qNjm.png?updatedAt=1638393216795">
+
+[resposta]<https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_grid_exer.html>
+
+#### Aproveitando o menu criado no item i, crie um arquivo index_grid_exerc_resp.html e torne-o responsivo como da figura 5. 
+
 <img src="https://ik.imagekit.io/3mfjmziiqmi/figura-grid_8K-salnff.png?updatedAt=1638275839903">
+
+[resposta]<https://github.com/andmennos/trilhaFrontEnd/blob/main/Desafio-3/index_grid_exerc_resp.html>
