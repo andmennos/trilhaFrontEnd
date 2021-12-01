@@ -1,0 +1,52 @@
+
+.container {
+    border: 1px solid black;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo {
+    padding: 10px;
+    flex-grow:1;
+    font-size: 30px;
+}
+.menu {
+    flex-grow: 1;
+    font-size: 30px;
+}
+.menu-lista {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color:black;
+}
+
+.botao {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    
+    .botao {
+        display: flex;
+        margin:0 10px 0 0;
+    }
+    .menu {
+        flex-grow:0;
+    }
+    .menu-lista {
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        border: 1px solid;
+        padding: 2px;
+    }
+
+}
