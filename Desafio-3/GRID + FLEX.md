@@ -1,6 +1,6 @@
 <h1>DESAFIO 3 - FLEXBOX e GRID LAYOUT</h1>
 <h1>FlexBox</h1>
-<h2><img src="https://ik.imagekit.io/3mfjmziiqmi/flexbox-css_taMitwvPNI9.png?updatedAt=1638276184670" style="width: 50%"></h2>
+<h2><img src="https://ik.imagekit.io/3mfjmziiqmi/flexbox-css_taMitwvPNI9.png?updatedAt=1638276184670" style="width: 20%"></h2>
 
 #### Explique o que é FlexBox:
 
@@ -75,7 +75,7 @@
 <img src="https://ik.imagekit.io/3mfjmziiqmi/figura-responsivo_d3_IXPpFu.png?updatedAt=1638275774262">
 
 <h1>Grid Layout</h1>
-<h2><img src="https://ik.imagekit.io/3mfjmziiqmi/grid-css_ycjM5u5xNpT.png?updatedAt=1638276323966" style="width: 50%"></h2>
+<h2><img src="https://ik.imagekit.io/3mfjmziiqmi/grid-css_ycjM5u5xNpT.png?updatedAt=1638276323966" style="width: 20%"></h2>
 
 #### Explique o que é Grid Layout:
 
