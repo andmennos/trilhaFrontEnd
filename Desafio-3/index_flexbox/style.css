@@ -1,27 +1,26 @@
-.logo {
-    padding: 10px;
-    flex-grow:2;
-    font-size: 20px;
-}
+
 .cabecalho {
-    border: 1px solid black;
-    height: 50px;
+    border: 0.1rem solid black;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
+.logo {
+    padding: 0.5rem;
+    flex-grow:2;
+    font-size: 1.5rem;
+}
 .menu {
     flex-grow: 1;
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 .menu ul {
     display: flex;
     justify-content: flex-end;
     justify-content: space-around;
     list-style: none;
-
 }
-
 .menu a {
     text-decoration: none;
     color:black;

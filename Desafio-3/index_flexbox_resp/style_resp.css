@@ -1,19 +1,18 @@
-
 .container {
-    border: 1px solid black;
-    height: 50px;
+    border: 0.1rem solid black;
+    height: 10vh;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 .logo {
-    padding: 10px;
+    padding: 1vw;
     flex-grow:1;
-    font-size: 30px;
+    font-size: 1.5rem;
 }
 .menu {
     flex-grow: 1;
-    font-size: 30px;
+    font-size: 1.5rem;;
 }
 .menu-lista {
     display: flex;
@@ -35,7 +34,7 @@
     
     .botao {
         display: flex;
-        margin:0 10px 0 0;
+        margin:0 1rem 0 0;
     }
     .menu {
         flex-grow:0;
@@ -43,10 +42,10 @@
     .menu-lista {
         display: none;
         position: absolute;
-        top: 50px;
-        right: 10px;
-        border: 1px solid;
-        padding: 2px;
+        top: 10vh;
+        right: 1.5vw;
+        border: 0.1rem solid;
+        padding: 0.5rem;
     }
 
 }
