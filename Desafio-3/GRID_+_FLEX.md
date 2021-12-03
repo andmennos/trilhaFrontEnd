@@ -10,7 +10,7 @@
 
 - **flex-direction:** Altera a orientação do eixo principal, podendo ser row (linha) ou column (coluna) e com a opção de reverter a ordem dos elementos com reverse (reverter);
 
-- **flex-wrap:** Adiciona quebra de linha ou de coluna (dependendo de onde estiver o eixo principal) sem ultrapassar o tamanho determinado de uma div;
+- **flex-wrap:** Adiciona quebra de linha ous de coluna (dependendo de onde estiver o eixo principal) sem ultrapassar o tamanho determinado de uma div;
 
 - **flex-flow:** Propriedade que junta as funções das duas propriedades acima, **flex-direction** e **flex-wrap**;
 

@@ -41,7 +41,7 @@
         flex-grow:0;
     }
     .menu-lista {
-        display: block;
+        display: none;
         position: absolute;
         top: 50px;
         right: 10px;

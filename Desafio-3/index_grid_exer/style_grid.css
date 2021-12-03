@@ -4,11 +4,11 @@
 
 .container {
     display: grid;
-    min-height: 100vh;
+    min-height: 98vh;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto ;
     grid-template-areas:"cabecalho cabecalho cabecalho" "navegacao navegacao navegacao" "secao secao lateral" "rodape rodape rodape";
-    gap: 10px 10px;
+    gap: 0.2vh 1vw;
 }
 p {
     margin: 3.5vh 0 1vh 5vh;
