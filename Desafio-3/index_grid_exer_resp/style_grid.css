@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    min-height: 97vh;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto ;
+    grid-template-areas:
+    "cabecalho cabecalho cabecalho" 
+    "navegacao navegacao navegacao" 
+    "secao secao lateral" 
+    "rodape rodape rodape";
+    gap: 1vh;
+}
+
+p {
+    margin: 1rem;
+}
+
+.cabecalho {
+    width:98vw;
+    font-size:0.6rem;
+    padding-left: 1rem;
+    background: gray;
+    grid-area: cabecalho;
+}
+
+.navegacao {
+    width:98vw;
+    font-size:0.6rem;
+    padding-left: 1rem;
+    color: white;
+    background: blue;
+    grid-area: navegacao;
+}
+
+.lista {
+    display:none;
+}
+
+.secao {
+    width: 72vw;
+    font-size:1rem;
+    padding-left: 1rem;
+    background: lightgray;
+    grid-area: secao;
+}
+
+.secao p {
+    display:none;
+}
+
+.lateral {
+    width: 25vw;
+    font-size:1.2rem;
+    padding-left: 1rem;
+    background: gray;
+    grid-area: lateral
+}
+
+.artigo {
+    width: 67vw;
+    height: 38vh;
+    font-size:1.2rem;
+    padding-left: 1rem;
+    background: gray;
+    grid-area: artigo;
+}
+
+.rodape {
+    width:98vw;
+    background: gray;
+    grid-area: rodape;
+}
+
+.rodape h6 {
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+        "cabecalho cabecalho cabecalho" 
+        "navegacao navegacao navegacao" 
+        "secao secao secao" 
+        "lateral lateral lateral"
+        "rodape rodape rodape";
+    }
+
+    .cabecalho {
+        width:97vw;
+        background: lightgray;
+        grid-area: cabecalho;
+    }
+
+    .navegacao {
+        width:97vw;
+        font-size:1rem;
+        padding:0;
+        color: white;
+        background: blue;
+        grid-area: navegacao;
+    }
+    .navegacao h2{
+        display:none;
+    }
+
+    .navegacao ul {
+        list-style: none;
+    }
+
+    .navegacao a {
+        color: white;
+    }
+
+    .lista {
+        display:block;
+    }
+
+    .lista a {
+        color:white;
+    }
+
+    .secao {
+        padding:0;
+    }
+
+    .secao h3 {
+        display:none;
+    }
+
+    .artigo p {
+        display:block;
+    }
+
+    .artigo {
+        width:97vw;
+        height:100%;
+        margin:0;
+        padding: 1vh;
+        background: gray;
+    }
+
+    .lateral {
+        width:97vw;
+        background: lightgray;
+        grid-area: lateral
+    }
+
+    .rodape {
+        width:97vw;
+        background: lightgray;
+        grid-area: rodape;
+    }
+}
