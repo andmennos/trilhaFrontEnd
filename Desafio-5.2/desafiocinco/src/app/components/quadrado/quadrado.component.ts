@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class QuadradoComponent implements OnInit {
 
-  valor: number = 0;
+  public valor: number = 0;
 
-  constructor( private router: Router){
+  constructor( private router: Router,){
     this.valor = this.router.getCurrentNavigation()?.extras.state?.valorRota;
   }
 

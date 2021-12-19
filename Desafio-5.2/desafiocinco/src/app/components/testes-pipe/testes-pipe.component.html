@@ -1,0 +1,9 @@
+<h1>DESAFIO 5.2</h1>
+<p>
+  <strong>Data do evento:</strong> {{ dataEvento | date: "dd/MM/yyyy" }}<br><br>
+  <strong>Preço:</strong> {{ precoEvento | currency: 'BRL' }}<br><br>
+  <strong>Ingressos limitados:</strong> ({{ percentVendido | percent: '1.0-2' }} já foram vendidos)<br>
+</p>
+<p><strong>Código:</strong> {{ '12345678901234567890' | codigoConvite }}</p><br>
+<p><strong>CPF do participante:</strong> {{ '12345678901' | paraCpf }}</p>
+<p><strong>CNPJ da empresa do participante:</strong> {{ '12345678901234' | paraCnpj }}</p>

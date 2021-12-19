@@ -8,6 +8,10 @@ import { ComponenteFilhoComponent } from './components/componente-filho/componen
 import { ListaNumerosComponent } from './components/lista-numeros/lista-numeros.component';
 import { QuadradoComponent } from './components/quadrado/quadrado.component';
 import { CuboComponent } from './components/cubo/cubo.component';
+import { TestesPipeComponent } from './components/testes-pipe/testes-pipe.component';
+import { CodigoConvitePipe } from './pipes/codigo-convite.pipe';
+import { ParaCpfPipe } from './pipes/para-cpf.pipe';
+import { ParaCnpjPipe } from './pipes/para-cnpj.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,10 @@ import { CuboComponent } from './components/cubo/cubo.component';
     ListaNumerosComponent,
     QuadradoComponent,
     CuboComponent,
+    TestesPipeComponent,
+    CodigoConvitePipe,
+    ParaCpfPipe,
+    ParaCnpjPipe,
   ],
   imports: [
     BrowserModule,

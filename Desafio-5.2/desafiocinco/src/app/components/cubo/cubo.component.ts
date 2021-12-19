@@ -1,24 +1,20 @@
-import { Router } from '@angular/router';
+import { ListaNumerosComponent } from './../lista-numeros/lista-numeros.component';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cubo',
   templateUrl: './cubo.component.html',
   styleUrls: ['./cubo.component.scss']
 })
-export class CuboComponent {
+export class CuboComponent implements OnInit{
 
-  valor: number;
+  public valor;
 
-  constructor( private router: Router){
+  constructor(private route: ActivatedRoute){}
 
-  }
-
-  vaiParaCubo(){
-    this.router.navigate(['/cubo']), {queryParams:{}}
-    }
-
-  ngOnInit(): void {
+  ngOnInit () {
+    this.route.queryParams.subscribe(params => {this.valor = params.valor;})
   }
 
 }
