@@ -1,0 +1,32 @@
+<div class="container">
+  <a href="" class="logo">
+      <img [ngClass]="{'imagem-logo':tela > 800, 'imagem-logo-media': tela < 800}" src="https://ik.imagekit.io/3mfjmziiqmi/logo_1-0w3x2IU.jpg?updatedAt=1638712902077">
+  </a>
+  <div class="caixa-botao" *ngIf="tela <= 800">
+    <button class="botao" (click)="funcaoToggle()">
+        <img src="https://ik.imagekit.io/3mfjmziiqmi/botao_hmHW6pXEoy.png?updatedAt=1638713482417">
+    </button>
+
+    <nav class="menu-botao">
+      <ul *ngIf="toggle" class='menu-media'>
+          <li><a routerLink="">home</a></li>
+          <li><a href="">profile</a></li>
+          <li><a href="">about</a></li>
+          <li><a routerLink="contact-us">contact</a></li>
+          <li><a href="">sign in</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="menu-nav" *ngIf="tela >= 801">
+    <nav class="menu">
+        <ul class="menu-lista">
+            <li><a routerLink="">home</a></li>
+            <li><a href="">profile</a></li>
+            <li><a href="">about</a></li>
+            <li><a routerLink="contact-us">contact</a></li>
+            <li><a href="">sign in</a></li>
+        </ul>
+    </nav>
+  </div>
+</div>

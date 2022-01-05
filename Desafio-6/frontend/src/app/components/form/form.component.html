@@ -1,0 +1,20 @@
+<div class="caixa-form">
+  <form [formGroup]="formulario">
+    <fieldset class="campo-formulario">
+        <input type="text" class="form-control" formControlName="nome" placeholder="&#xF007;  Your Name" required >
+        <small *ngIf="formulario.get('nome').invalid && formulario.get('nome').touched" class="text-danger">É necessário informar seu nome!</small>
+
+        <input type="text" class="form-control" formControlName="email" placeholder="&#9993;  Your E-mail" required>
+        <small *ngIf="formulario.get('email').invalid && formulario.get('email').touched" class="text-danger">É necessário informar um e-mail!</small>
+
+        <textarea cols="21" rows="9" class="form-control" formControlName="mensagem" placeholder="&#128488;  Your Message" required></textarea>
+        <small *ngIf="formulario.get('mensagem').invalid && formulario.get('mensagem').touched" class="text-danger">Digite sua mensagem (min 5 caracteres)</small>
+    </fieldset>
+
+    <div class=botao>
+      <button [disabled]="formulario.invalid" type="submit" class="botao-submit" (click)="enviaMensagem()">START CHAT</button>
+    </div>
+
+  </form>
+</div>
+

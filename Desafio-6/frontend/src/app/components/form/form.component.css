@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Montserrat&display=swap");
+
+.caixa-form {
+  display:flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+.campo-formulario {
+  display:flex;
+  flex-direction: column;
+  width:25vw;
+  border:none;
+}
+
+.form-control.ng-touched.ng-invalid {
+  border: 0.1rem solid #ff0000;
+}
+
+.form-control.ng-touched.ng-valid {
+  border: 0.1rem solid #008000
+}
+
+.form-control {
+	font-family: 'Montserrat', FontAwesome;
+	margin: 0.3vw;
+	padding-left: 1vw;
+	box-shadow: 0.1vw 0.2vw 0.5vw 0.3vw #eaedf6;
+	border:1vw;
+	border-color: #99b1c5;
+	border-radius: 0.3vw;
+}
+
+.text-danger {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #ff0000;
+}
+
+.botao {
+  display:flex;
+  justify-content: center;
+}
+
+.botao-submit {
+	font-family: 'Montserrat', sans-serif;
+	padding: 0.5vh 1vw;
+ 	border-radius: 1.5vw;
+  font-weight: bold;
+	color:#fff;
+  background-image: linear-gradient(to left, #6a0081, #d0038c);
+}
+
+@media screen and (max-width: 800px) {
+	.caixa-form {
+    display:flex;
+    justify-content:flex-end;
+    margin:1.5vw;
+  }
+
+  .campo-formulario {
+    display:flex;
+    flex-direction: column;
+    width:40vw;
+    border:none;
+  }
+}

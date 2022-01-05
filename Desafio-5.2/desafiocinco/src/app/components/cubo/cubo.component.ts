@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CuboComponent implements OnInit{
 
-  public valor;
+  public valor: any;
 
   constructor(private route: ActivatedRoute){}
 

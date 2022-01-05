@@ -1,7 +1,6 @@
 import { ComponentePaiComponent } from './../componente-pai/componente-pai.component';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { CuboComponent } from '../cubo/cubo.component';
+import { TesteServiceService } from 'src/app/services/teste-service.service';
 
 @Component({
   selector: 'app-componente-filho',
@@ -9,5 +8,4 @@ import { CuboComponent } from '../cubo/cubo.component';
   styleUrls: ['./componente-filho.component.scss']
 })
 export class ComponenteFilhoComponent extends ComponentePaiComponent{
-
 }
