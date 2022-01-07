@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class FormComponent implements OnInit {
 
   formulario: FormGroup;
-  tela = innerWidth;
 
   constructor(private service: ServiceService, private router: Router) { }
 
@@ -30,8 +29,4 @@ export class FormComponent implements OnInit {
     })
   }
 
-  @HostListener('window:resize',['$event'])
-  onResize() {
-    this.tela = window.innerWidth;
-  }
 }
