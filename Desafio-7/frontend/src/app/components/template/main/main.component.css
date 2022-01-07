@@ -1,0 +1,12 @@
+.fundo {
+	position:absolute;
+	width:45vw;
+	bottom:0;
+	left:0;
+}
+
+@media screen and (max-width: 800px) {
+	.fundo {
+    width:55vw;
+  }
+}

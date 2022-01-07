@@ -1,0 +1,32 @@
+<mat-toolbar class="container mat-elevation-z4">
+  <div class="logo">
+    <span>
+      <a routerLink="">
+        <img [ngClass]="{'imagem-logo':tela > 800, 'imagem-logo-media': tela < 800}" src="https://ik.imagekit.io/3mfjmziiqmi/logo_1-0w3x2IU.jpg?updatedAt=1638712902077">
+      </a>
+    </span>
+  </div>
+
+  <button mat-icon-button color="primary" (click)="funcaoToggle()" *ngIf="tela <= 800">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div *ngIf="toggle || tela >= 801" [ngClass]="{'menu-nav':tela >= 801, 'menu-media':tela <= 800}">
+    <span>
+      <a class="menu-a" routerLink="">home</a>
+    </span>
+    <span>
+      <a class="menu-a" routerLink="">profile</a>
+    </span>
+    <span>
+      <a class="menu-a" rrouterLink="">about</a>
+    </span>
+    <span>
+      <a class="menu-a" routerLink="contact-us">contact</a>
+    </span>
+    <span>
+      <a class="menu-a" routerLink="">sign in</a>
+    </span>
+  </div>
+
+</mat-toolbar>

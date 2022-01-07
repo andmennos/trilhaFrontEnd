@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Montserrat&display=swap");
+
+.form {
+  display:flex;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-right: 5%;
+}
+
+.caixa-form {
+  display:flex;
+  flex-direction: column;
+  width:25vw;
+  border:none;
+}
+
+.botao {
+  display:flex;
+  justify-content: center;
+}
+
+.botao-submit {
+	font-family: 'Montserrat', sans-serif;
+	padding: 0.5vh 1vw;
+ 	border-radius: 1.5vw;
+  font-weight: bold;
+	color:#fff;
+  background-image: linear-gradient(to left, #6a0081, #d0038c);
+}
+
+textarea {
+  height:10vh;
+}
+
+@media screen and (max-width: 800px) {
+	.form {
+    display:flex;
+    justify-content:flex-end;
+    margin:1.5vw;
+  }
+
+  .caixa-form {
+    display:flex;
+    flex-direction: column;
+    width:40vw;
+  }
+}

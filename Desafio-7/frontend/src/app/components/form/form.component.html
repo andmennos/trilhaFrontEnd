@@ -1,0 +1,34 @@
+<div class="form">
+  <div class="caixa-form">
+    <mat-form-field appearance="fill" hideRequiredMarker MatFormFieldControl="nome">
+      <mat-label>
+        <i class="material-icons">
+          person
+        </i> Your Name
+      </mat-label>
+      <input matInput [formControl]="nome" required>
+      <mat-error *ngIf="nome.invalid">{{getErrorMessageNome()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" hideRequiredMarker MatFormFieldControl="email">
+      <mat-label>
+        <i class="material-icons">
+          mail
+        </i> Your E-mail
+      </mat-label>
+      <input matInput [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill" hideRequiredMarker MatFormFieldControl="mensagem">
+        <mat-label>
+          <i class="material-icons">
+            message
+          </i>Your Message
+        </mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+    <div class=botao>
+      <button [disabled]="[email.invalid]" type="submit" class="botao-submit" >START CHAT</button>
+    </div>
+  </div>
+</div>
+

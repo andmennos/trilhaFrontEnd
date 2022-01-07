@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Montserrat&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.conteudo-principal {
+  display:flex;
+  justify-content:flex-end;
+  margin-right:6%;
+}
+
+.secao {
+  margin-top:2rem;
+	padding-bottom:3vh;
+}
+
+.secao h1 {
+	font-family:'Montserrat', sans-serif;
+	padding-bottom:2vh;
+	text-transform:uppercase;
+	letter-spacing:0.9vw;
+	font-size:3.5rem;
+	text-align:right;
+	color: #570180;
+}
+
+.caixa-texto {
+  width:53vw;
+  padding-bottom:2vh;
+  border-bottom: 0.1rem solid #d3d3d3;
+}
+
+.caixa-texto p {
+	font-family:'Barlow', sans-serif;
+	font-size:1rem;
+	line-height:1.7;
+  text-align:right;
+	color:#6a8092;
+}
+
+@media screen and (max-width: 800px) {
+	.conteudo-principal {
+    margin:0;
+  }
+
+  .secao {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0;
+  }
+
+  .caixa-texto {
+    width:90%;
+  }
+
+  .caixa-texto p {
+    color:#6a8092;
+    padding:2vw;
+  }
+}
+
+@media screen and (max-width: 404px) {
+	.secao h1 {
+    font-size:3rem;
+    text-align:center;
+  }
+
+  .caixa-texto {
+    height:30vh;
+  }
+}
