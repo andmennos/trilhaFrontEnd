@@ -12,20 +12,20 @@ import { Entry } from './entry.model';
   providedIn: 'root'
 })
 export class EntryService {
-  private apiPath: string = "api/entries"
+  private apiPath: string = "https://p38yx781aa.execute-api.us-east-1.amazonaws.com/Stage/lancamentos"
+  private userId:string ="user_id=anderson_ferreira";
 
   constructor(private http: HttpClient, private categoryService: CategoryService) { }
 
   getAll(): Observable<Entry[]> {
-    return this.http.get(this.apiPath).pipe(
+    return this.http.get(this.apiPath+"?"+this.userId).pipe(
       catchError(this.handleError),
-      map(this.jsonDataToEntries)
+      map(this.jsonDataToEntries),
     )
   }
 
-  getByid(id: number): Observable<Entry> {
-    const url = `${this.apiPath}/${id}`;
-    console.log('Teste url', url);
+  getByid(id: string): Observable<Entry> {
+    const url = `${this.apiPath}/${id}/?${this.userId}`;
 
     return this.http.get(url).pipe(
       catchError(this.handleError),
@@ -34,7 +34,9 @@ export class EntryService {
   }
 
   create(entry: Entry): Observable<Entry> {
-    return this.categoryService.getByid(entry.categoryId).pipe(
+    entry.id = entry.name;
+
+    return this.categoryService.getByid(entry.id).pipe(
       flatMap(category => {
         entry.category = category;
 
@@ -47,9 +49,9 @@ export class EntryService {
   }
 
   update(entry: Entry): Observable<Entry> {
-    const url = `${this.apiPath}/${entry.id}`;
+    const url = `${this.apiPath}?${entry.id}/${entry.user_id}`;
 
-    return this.categoryService.getByid(entry.categoryId).pipe(
+    return this.categoryService.getByid(entry.id).pipe(
       flatMap(category => {
         entry.category = category;
 
@@ -62,7 +64,7 @@ export class EntryService {
   }
 
   delete(id: number): Observable<any> {
-    const url = `${this.apiPath}/${id}`;
+    const url = `${this.apiPath}?${this.userId}&id=${id}`;
     return this.http.delete(url).pipe(
       catchError(this.handleError),
       map(() => null)

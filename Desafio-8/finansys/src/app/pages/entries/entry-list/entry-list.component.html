@@ -35,7 +35,7 @@
         <small *ngIf="entry.description">{{ entry.description }}</small><br>
       </td>
       <td>
-        {{ entry.category.name }}
+        {{ entry.name }}
       </td>
       <td>
         <strong [class.text-success]="entry.type == 'revenue'" [class.text-danger]="entry.type == 'expense'">
@@ -51,3 +51,4 @@
     </tr>
   </tbody>
 </table>
+

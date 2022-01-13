@@ -70,7 +70,7 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
   private loadCategory() {
     if (this.currentAction == "edit") {
       this.route.paramMap.pipe(
-        switchMap(params => this.categoryService.getByid(+params.get("id")))
+        switchMap(params => this.categoryService.getByid(params.get("id")))
       )
       .subscribe(
         (category) => {
@@ -111,7 +111,7 @@ export class CategoryFormComponent implements OnInit, AfterContentChecked {
     toastr.success("Solicitação processada com sucesso");
 
     this.router.navigateByUrl("categories", {skipLocationChange: true}).then(
-      () => this.router.navigate(["categories", category.id, "edit"])
+      () => this.router.navigate(["categories"])
     )
   }
 

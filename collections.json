@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "9f64743b-8a8f-4f59-a363-f221864b8723",
+		"name": "Finansys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Categorias",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "UserID",
+						"value": "willivan",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://p38yx781aa.execute-api.us-east-1.amazonaws.com/Stage/categorias?user_id=george",
+					"protocol": "https",
+					"host": [
+						"p38yx781aa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Stage",
+						"categorias"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "george"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Categoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "UserID",
+						"value": "willivan",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"george\",\r\n    \"id\":\"3\",\r\n    \"name\":\"Mercado\",\r\n    \"description\":\"Pagamentos das contas de mercado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://p38yx781aa.execute-api.us-east-1.amazonaws.com/Stage/categorias",
+					"protocol": "https",
+					"host": [
+						"p38yx781aa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Stage",
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Categoria",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "UserID",
+						"value": "willivan",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"george\",\r\n    \"id\":\"1\",\r\n    \"name\":\"Moradia Alternativa\",\r\n    \"description\":\"Pagamentos das contas de casa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://p38yx781aa.execute-api.us-east-1.amazonaws.com/Stage/categorias",
+					"protocol": "https",
+					"host": [
+						"p38yx781aa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Stage",
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Categoria por ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "UserID",
+						"value": "willivan",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://p38yx781aa.execute-api.us-east-1.amazonaws.com/Stage/categorias/1?user_id=george",
+					"protocol": "https",
+					"host": [
+						"p38yx781aa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Stage",
+						"categorias",
+						"1"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "george"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagar Categoria",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "UserID",
+						"value": "willivan",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://p38yx781aa.execute-api.us-east-1.amazonaws.com/Stage/categorias?user_id=george&id=1",
+					"protocol": "https",
+					"host": [
+						"p38yx781aa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Stage",
+						"categorias"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "george"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Lançamento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "UserID",
+						"value": "willivan",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"george\",\r\n    \"id\":\"123\",\r\n    \"name\":\"Gás de Cozinha\",\r\n    \"paid\":true,\r\n    \"date\":\"13/06/2021\",\r\n    \"amount\":70.80,\r\n    \"type\":\"expense\",\r\n    \"description\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://p38yx781aa.execute-api.us-east-1.amazonaws.com/Stage/lancamentos",
+					"protocol": "https",
+					"host": [
+						"p38yx781aa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Stage",
+						"lancamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lancamentos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "UserID",
+						"value": "willivan",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://p38yx781aa.execute-api.us-east-1.amazonaws.com/Stage/lancamentos?user_id=george",
+					"protocol": "https",
+					"host": [
+						"p38yx781aa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Stage",
+						"lancamentos"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "george"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lancamento por ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "UserID",
+						"value": "willivan",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://p38yx781aa.execute-api.us-east-1.amazonaws.com/Stage/lancamentos/123?user_id=george",
+					"protocol": "https",
+					"host": [
+						"p38yx781aa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Stage",
+						"lancamentos",
+						"123"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "george"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Lançamento",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "UserID",
+						"value": "willivan",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": \"george\",\r\n    \"id\":\"2021-06-21T13:11:00\",\r\n    \"name\":\"Teste Alteração\",\r\n    \"paid\":true,\r\n    \"date\":\"13/06/2021\",\r\n    \"amount\":70.80,\r\n    \"type\":\"expense\",\r\n    \"description\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://p38yx781aa.execute-api.us-east-1.amazonaws.com/Stage/lancamentos",
+					"protocol": "https",
+					"host": [
+						"p38yx781aa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Stage",
+						"lancamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagar Lançamento",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "UserID",
+						"value": "willivan",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://p38yx781aa.execute-api.us-east-1.amazonaws.com/Stage/lancamentos?user_id=george&id=123",
+					"protocol": "https",
+					"host": [
+						"p38yx781aa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Stage",
+						"lancamentos"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "george"
+						},
+						{
+							"key": "id",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
