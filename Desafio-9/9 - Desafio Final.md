@@ -14,7 +14,7 @@
 
 - Definir as configurações do projeto por padrão de usabilidade do angular cli e toda sua parte estática da aplicação, como imagens, definições de aplicação de estilos
 
-#### c) Qual a finalidade da tag <router-outlet></router-outlet>?
+#### c) Qual a finalidade da tag <'router-outlet></router-outlet'>?
 
 - Para definir a saída de uma rota. Busca no path dentro da rota criada e coloca dentro da tag router-outlet.
 
