@@ -18,11 +18,13 @@ export class EntryService {
   constructor(private http: HttpClient, private categoryService: CategoryService) { }
 
   getAll(): Observable<Entry[]> {
+    const url = `${this.apiPath}?${this.userId}`;
     return this.http.get(this.apiPath+"?"+this.userId).pipe(
       catchError(this.handleError),
       map(this.jsonDataToEntries),
     )
   }
+
 
   getByid(id: string): Observable<Entry> {
     const url = `${this.apiPath}/${id}/?${this.userId}`;
@@ -36,34 +38,22 @@ export class EntryService {
   create(entry: Entry): Observable<Entry> {
     entry.id = entry.name;
 
-    return this.categoryService.getByid(entry.id).pipe(
-      flatMap(category => {
-        entry.category = category;
-
-        return this.http.post(this.apiPath, entry).pipe(
-          catchError(this.handleError),
-          map(this.jsonDataToEntry)
-        )
-      })
-    );
+    return this.http.post(this.apiPath, entry).pipe(
+      catchError(this.handleError),
+      map(this.jsonDataToEntry)
+    )
   }
 
   update(entry: Entry): Observable<Entry> {
     const url = `${this.apiPath}?${entry.id}/${entry.user_id}`;
 
-    return this.categoryService.getByid(entry.id).pipe(
-      flatMap(category => {
-        entry.category = category;
-
-        return this.http.put(url, entry).pipe(
-          catchError(this.handleError),
-          map(() => entry )
-        )
-      })
+    return this.http.put(url, entry).pipe(
+      catchError(this.handleError),
+      map(() => entry )
     )
   }
 
-  delete(id: number): Observable<any> {
+  delete(id: string): Observable<any> {
     const url = `${this.apiPath}?${this.userId}&id=${id}`;
     return this.http.delete(url).pipe(
       catchError(this.handleError),

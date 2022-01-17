@@ -24,7 +24,6 @@ export class CategoryService {
 
   getByid(id: string): Observable<Category> {
     const url = `${this.apiPath}/${id}/?${this.userId}`;
-    console.log('Teste url', url);
 
     return this.http.get(url).pipe(
       catchError(this.handleError),
@@ -43,7 +42,6 @@ export class CategoryService {
 
   update(category: Category): Observable<Category> {
     const url = `${this.apiPath}?${category.id}/${category.user_id}`;
-    console.log("erro no salvar", url)
 
     return this.http.put(url, category).pipe(
       catchError(this.handleError),
