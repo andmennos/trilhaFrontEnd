@@ -15,7 +15,6 @@ import { Router } from '@angular/router';
 
 export class ProponenteFormComponent extends RecursosBasicosService implements OnInit {
 
-  anoNascimento = "2004"
   enviaForm = this.botaoSalvar();
   modelo = Proponente;
 
@@ -68,6 +67,7 @@ export class ProponenteFormComponent extends RecursosBasicosService implements O
   ngOnInit(){
     this.geraTitulo(this.imprimeTitulo());
     this.geraRecursoForm();
+
 
   }
 

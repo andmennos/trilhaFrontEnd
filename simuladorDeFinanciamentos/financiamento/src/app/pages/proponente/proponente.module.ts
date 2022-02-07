@@ -12,9 +12,6 @@ import { ProponenteFormComponent } from './proponente-form/proponente-form.compo
   imports: [
     SharedModule,
     ProponenteRoutingModule
-  ],
-  exports: [
-    SharedModule
   ]
 })
 export class ProponenteModule { }
