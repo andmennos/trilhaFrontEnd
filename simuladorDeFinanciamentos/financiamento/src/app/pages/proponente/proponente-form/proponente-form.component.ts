@@ -74,11 +74,11 @@ export class ProponenteFormComponent extends RecursosBasicosService implements O
   protected geraRecursoForm(){
     this.recursosFormulario = this.formBuilder.group({
       id: [null],
-      nome: [null, [Validators.required, Validators.minLength(3), Validators.pattern('^[ a-zA-Z]*$')]],
-      profissao: [null, [Validators.required, Validators.minLength(3), Validators.pattern('^[ a-zA-Z]*$')]],
+      nome: [null, [Validators.required, Validators.minLength(3), Validators.pattern('^[ A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]*$')]],
+      profissao: [null, [Validators.required, Validators.minLength(3), Validators.pattern('^[ A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]*$')]],
       cpf: [null, [Validators.required, Validators.minLength(14)]],
       email: [null, [Validators.required, Validators.email]],
-      data: [null, [Validators.required, ProponenteValidacoes.menorIdade]],
+      data: [null, [Validators.required, ProponenteValidacoes.menorIdade, Validators.minLength(10)]],
       cep: [null, [Validators.required, Validators.minLength(9)]],
       cel: [null, [Validators.required, Validators.minLength(14)]],
     });

@@ -123,6 +123,9 @@
               <div class="text-danger"*ngIf="recursosFormulario.get('data')?.errors!['menorIdade']" class="erro" role="alert">
                 Você precisa ter mais de 18 anos para realizar o cadastro
               </div>
+              <div *ngIf="recursosFormulario.get('data')?.errors!['minlength']" class="erro" role="alert">
+                Deve inserir a data completa.
+              </div>
             </div>
           </div>
 
