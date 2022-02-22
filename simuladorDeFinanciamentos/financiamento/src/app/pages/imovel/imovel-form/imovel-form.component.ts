@@ -34,8 +34,8 @@ export class ImovelFormComponent
     injector: Injector,
     location: Location,
     router: Router,
-    protected formBuilder: FormBuilder,
-    protected imovelStorage: ImovelStorageService
+    public formBuilder: FormBuilder,
+    public imovelStorage: ImovelStorageService
   ) {
     super(injector, location, router);
   }
@@ -45,7 +45,7 @@ export class ImovelFormComponent
     this.geraRecursoForm();
   }
 
-  protected geraRecursoForm() {
+  public geraRecursoForm() {
     this.recursosFormulario = this.formBuilder.group({
       id: [null],
       tipo: [null, [Validators.required]],
@@ -100,7 +100,7 @@ export class ImovelFormComponent
     return (this.enviarFormulario = this.botaoSalvar());
   }
 
-  protected botaoSalvar() {
+  public botaoSalvar() {
     if (this.aprovacao == true) {
       return this.rotaParaAprovacaoAprovada();
     }
@@ -108,11 +108,11 @@ export class ImovelFormComponent
     return '';
   }
 
-  protected rotaParaAprovacaoReprovada() {
+  public rotaParaAprovacaoReprovada() {
     return this.router.navigate(['/reprovado']);
   }
 
-  protected rotaParaAprovacaoAprovada() {
+  public rotaParaAprovacaoAprovada() {
     return this.router.navigate(['/aprovado']);
   }
 }

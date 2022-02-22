@@ -1,53 +1,81 @@
 import { RecursosBasicosService } from './../../shared/services/recursos-basicos.service';
-import { RouterTestingModule } from '@angular/router/testing';
 import { ImovelStorageService } from './../shared/imovel-storage.service';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Injector } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/compiler';
+import { Injector } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import { Imovel } from './../shared/imovel.model';
 import { ImovelFormComponent } from './imovel-form.component';
 
-describe('ImovelFormComponent', () => {
+fdescribe('ImovelFormComponent', () => {
   let component: ImovelFormComponent;
   let fixture: ComponentFixture<ImovelFormComponent>;
   let injectorSpy: jasmine.SpyObj<Injector>;
   let locationSpy: jasmine.SpyObj<Location>;
   let routerSpy: jasmine.SpyObj<Router>;
   let imovelStorageServiceSpy: jasmine.SpyObj<ImovelStorageService>;
-  const formBuilderSpy: FormBuilder = new FormBuilder();
+  const imovel: Imovel = {
+    tipo:"";
+    renda=""
+  }
 
-  beforeEach(async () => {
+  beforeEach(() => {
+
+    locationSpy = jasmine.createSpyObj<Location>(
+      "Location",
+      ["path"]
+    );
+    routerSpy = jasmine.createSpyObj<Router>("Router", ["routerState"]);
     imovelStorageServiceSpy = jasmine.createSpyObj<ImovelStorageService>(
       "ImovelStorageService",
       ["setImovel"]
     );
 
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
+      schemas: [NO_ERRORS_SCHEMA],
       declarations: [ImovelFormComponent],
       imports: [
+        RouterTestingModule,
         FormsModule,
         ReactiveFormsModule,
-        RouterTestingModule
       ],
       providers: [
         RecursosBasicosService,
         { provide: Injector, useValue: injectorSpy },
         { provide: Location, useValue:  locationSpy },
         { provide: Router, useValue: routerSpy },
-        { provide: FormBuilder, useValue: formBuilderSpy },
         { provide: ImovelStorageService, useValue: imovelStorageServiceSpy },
-      ],
-    }).compileComponents();
-  });
-
-  beforeEach(() => {
+        { provide: Imovel }
+      ]
+    });
     fixture = TestBed.createComponent(ImovelFormComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('can load instance', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('makes expected calls', () => {
+    spyOn(component, 'imprimeTitulo').and.callThrough();
+    component.ngOnInit();
+    expect(component.imprimeTitulo).toHaveBeenCalled();
+  });
+
+  it('makes expected calls', () => {
+    const routerSpy: Router = fixture.debugElement.injector.get(Router);
+    spyOn(routerSpy, 'navigate').and.callThrough();
+    component.rotaParaAprovacaoAprovada();
+    expect(routerSpy.navigate).toHaveBeenCalled();
+  });
+
+  it('makes expected calls', () => {
+    const routerSpy: Router = fixture.debugElement.injector.get(Router);
+    spyOn(routerSpy, 'navigate').and.callThrough();
+    component.rotaParaAprovacaoAprovada();
+    expect(routerSpy.navigate).toHaveBeenCalled();
   });
 });

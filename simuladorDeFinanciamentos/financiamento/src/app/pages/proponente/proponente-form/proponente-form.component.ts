@@ -1,5 +1,5 @@
-import { Component, OnInit, Injector } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { Component, OnInit, Injector, Input } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Proponente } from '../shared/proponente.model'
 import { RecursosBasicosService } from '../../shared/services/recursos-basicos.service';
 import { ProponenteValidacoes } from './validacoes';
@@ -15,8 +15,10 @@ import { Router } from '@angular/router';
 
 export class ProponenteFormComponent extends RecursosBasicosService implements OnInit {
 
-  enviaForm = this.botaoSalvar();
-  modelo = Proponente;
+  public enviaForm = this.botaoSalvar();
+  public modelo = Proponente;
+  @Input() public url: string = "";
+
 
   imaskEmail = {
     mask: String
@@ -67,8 +69,6 @@ export class ProponenteFormComponent extends RecursosBasicosService implements O
   ngOnInit(){
     this.geraTitulo(this.imprimeTitulo());
     this.geraRecursoForm();
-
-
   }
 
   public geraRecursoForm(){
@@ -94,9 +94,6 @@ export class ProponenteFormComponent extends RecursosBasicosService implements O
   }
 
   public criaRotaImovel(){
-    return "/dados-do-imovel"
+    return this.rota;
   }
-
-
-
 }

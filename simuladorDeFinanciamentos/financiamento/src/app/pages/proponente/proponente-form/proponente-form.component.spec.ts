@@ -2,22 +2,33 @@ import { RecursosBasicosService } from './../../shared/services/recursos-basicos
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { Injector } from '@angular/core';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { Proponente } from '../shared/proponente.model';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Proponente } from '../shared/proponente.model';
 import { ProponenteFormComponent } from './proponente-form.component';
 
-fdescribe(ProponenteFormComponent.name, () => {
+describe(ProponenteFormComponent.name, () => {
   let component: ProponenteFormComponent;
   let fixture: ComponentFixture<ProponenteFormComponent>;
   let injectorSpy: jasmine.SpyObj<Injector>;
   let locationSpy: jasmine.SpyObj<Location>;
   let routerSpy: jasmine.SpyObj<Router>;
+  let proponenteSpy: jasmine.SpyObj<Proponente>;
 
   beforeEach(() => {
-    locationSpy = jasmine.createSpyObj<Location>("Location", ["path"]);
+
+    locationSpy = jasmine.createSpyObj<Location>(
+      "Location",
+      ["path"]
+    );
+    routerSpy = jasmine.createSpyObj<Router>("Router", ["routerState"]);
+
+    proponenteSpy = jasmine.createSpyObj<Proponente>(
+      "Proponente",
+      ["name"]
+    )
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
       declarations: [ProponenteFormComponent],
@@ -29,7 +40,7 @@ fdescribe(ProponenteFormComponent.name, () => {
       providers: [
         RecursosBasicosService,
         { provide: Injector, useValue: injectorSpy },
-        { provide: Location, useValue:  locationSpy },
+        { provide: Location, useValue: locationSpy },
         { provide: Router, useValue: routerSpy }
       ]
     });
@@ -45,24 +56,35 @@ fdescribe(ProponenteFormComponent.name, () => {
     expect(component.modelo).toEqual(Proponente);
   });
 
-  describe('ngOnInit', () => {
-    it('makes expected calls', () => {
-      spyOn(component, 'imprimeTitulo').and.callThrough();
-      component.ngOnInit();
-      expect(component.imprimeTitulo).toHaveBeenCalled();
-    });
+
+  it('makes expected calls', () => {
+    spyOn(component, 'imprimeTitulo').and.callThrough();
+    component.ngOnInit();
+    expect(component.imprimeTitulo).toHaveBeenCalled();
   });
 
-  describe('botaoSalvar', () => {
-    it('makes expected calls', () => {
-      const locationStub: Location = fixture.debugElement.injector.get(
-        Location
-      );
-      spyOn(component, 'criaRotaImovel').and.callThrough();
-      spyOn(locationStub, 'path').and.callThrough();
-      component.botaoSalvar();
-      expect(component.criaRotaImovel).toHaveBeenCalled();
-      expect(locationStub.path).toHaveBeenCalled();
-    });
+
+  it(`#${ProponenteFormComponent.prototype.botaoSalvar.name}
+    makes expected calls`, () => {
+    const locationStub: Location = fixture.debugElement.injector.get(
+      Location
+    );
+
+    spyOn(component, 'botaoSalvar').and.callThrough();
+    component.botaoSalvar();
+    component.rota = "";
+    fixture.detectChanges();
+    component.rota = "";
+    expect(locationStub.path).toHaveBeenCalled();
   });
+
+  it(`#${ProponenteFormComponent.prototype.criaRotaImovel.name}
+    Should create rotaImovel`, () => {
+      spyOn(component, 'criaRotaImovel').and.callThrough();
+      component.criaRotaImovel();
+      component.rota = "";
+      fixture.detectChanges();
+      expect(component.criaRotaImovel).toBeTruthy();
+    })
+
 });
