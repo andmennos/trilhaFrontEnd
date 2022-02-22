@@ -15,7 +15,15 @@ describe(ProponenteFormComponent.name, () => {
   let injectorSpy: jasmine.SpyObj<Injector>;
   let locationSpy: jasmine.SpyObj<Location>;
   let routerSpy: jasmine.SpyObj<Router>;
-  let proponenteSpy: jasmine.SpyObj<Proponente>;
+  const proponente: Proponente = {
+    name:"",
+    profissao:"",
+    cpf:"",
+    email:"",
+    data:"",
+    cep:"",
+    cel:""
+  }
 
   beforeEach(() => {
 
@@ -25,10 +33,6 @@ describe(ProponenteFormComponent.name, () => {
     );
     routerSpy = jasmine.createSpyObj<Router>("Router", ["routerState"]);
 
-    proponenteSpy = jasmine.createSpyObj<Proponente>(
-      "Proponente",
-      ["name"]
-    )
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
       declarations: [ProponenteFormComponent],
@@ -41,7 +45,8 @@ describe(ProponenteFormComponent.name, () => {
         RecursosBasicosService,
         { provide: Injector, useValue: injectorSpy },
         { provide: Location, useValue: locationSpy },
-        { provide: Router, useValue: routerSpy }
+        { provide: Router, useValue: routerSpy },
+        { provide: Proponente, useValue: proponente}
       ]
     });
     fixture = TestBed.createComponent(ProponenteFormComponent);
@@ -66,9 +71,9 @@ describe(ProponenteFormComponent.name, () => {
 
   it(`#${ProponenteFormComponent.prototype.botaoSalvar.name}
     makes expected calls`, () => {
-    const locationStub: Location = fixture.debugElement.injector.get(
-      Location
-    );
+      const locationStub: Location = fixture.debugElement.injector.get(
+        Location
+      );
 
     spyOn(component, 'botaoSalvar').and.callThrough();
     component.botaoSalvar();

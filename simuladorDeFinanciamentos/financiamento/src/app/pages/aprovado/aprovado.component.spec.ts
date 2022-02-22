@@ -8,7 +8,7 @@ import { ImovelStorageService } from '../imovel/shared/imovel-storage.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AprovadoComponent } from './aprovado.component';
 
-describe('AprovadoComponent', () => {
+fdescribe('AprovadoComponent', () => {
   let component: AprovadoComponent;
   let fixture: ComponentFixture<AprovadoComponent>;
   let routerSpy: jasmine.SpyObj<Router>;
@@ -17,6 +17,8 @@ describe('AprovadoComponent', () => {
   let imovelStorageServiceSpy = () => ({ getImovel: () => ({}) });
 
   beforeEach(() => {
+
+    routerSpy = jasmine.createSpyObj<Router>("Router", ["routerState"]);
 
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
@@ -38,16 +40,20 @@ describe('AprovadoComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('ngOnInit', () => {
-    it('makes expected calls', () => {
-      const imovelStorageServiceStub: ImovelStorageService = fixture.debugElement.injector.get(
-        ImovelStorageService
-      );
-      spyOn(component, 'imprimeTitulo').and.callThrough();
-      spyOn(imovelStorageServiceStub, 'getImovel').and.callThrough();
-      component.ngOnInit();
-      expect(component.imprimeTitulo).toHaveBeenCalled();
-      expect(imovelStorageServiceStub.getImovel).toHaveBeenCalled();
-    });
+  it('makes expected calls', () => {
+    spyOn(component, 'imprimeTitulo').and.callThrough();
+    component.ngOnInit();
+    expect(component.imprimeTitulo).toHaveBeenCalled();
+  });
+
+  it('makes expected calls', () => {
+    const imovelStorageServiceStub: ImovelStorageService = fixture.debugElement.injector.get(
+      ImovelStorageService
+    );
+    spyOn(component, 'imprimeTitulo').and.callThrough();
+    spyOn(imovelStorageServiceStub, 'getImovel').and.callThrough();
+    component.ngOnInit();
+    expect(component.imprimeTitulo).toHaveBeenCalled();
+    expect(imovelStorageServiceStub.getImovel).toHaveBeenCalled();
   });
 });

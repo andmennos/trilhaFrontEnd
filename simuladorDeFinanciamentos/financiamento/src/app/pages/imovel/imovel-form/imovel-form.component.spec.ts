@@ -10,7 +10,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Imovel } from './../shared/imovel.model';
 import { ImovelFormComponent } from './imovel-form.component';
 
-fdescribe('ImovelFormComponent', () => {
+
+describe('ImovelFormComponent', () => {
   let component: ImovelFormComponent;
   let fixture: ComponentFixture<ImovelFormComponent>;
   let injectorSpy: jasmine.SpyObj<Injector>;
@@ -18,8 +19,13 @@ fdescribe('ImovelFormComponent', () => {
   let routerSpy: jasmine.SpyObj<Router>;
   let imovelStorageServiceSpy: jasmine.SpyObj<ImovelStorageService>;
   const imovel: Imovel = {
-    tipo:"";
-    renda=""
+    tipo:"",
+    renda:"",
+    valorImovel:"",
+    valorEntrada:"",
+    parcelas:"",
+    valorTotalAprovado:0,
+    parcelaInicial:0
   }
 
   beforeEach(() => {
@@ -28,7 +34,7 @@ fdescribe('ImovelFormComponent', () => {
       "Location",
       ["path"]
     );
-    routerSpy = jasmine.createSpyObj<Router>("Router", ["routerState"]);
+    routerSpy = jasmine.createSpyObj<Router>("Router", ["routerState", "navigate"]);
     imovelStorageServiceSpy = jasmine.createSpyObj<ImovelStorageService>(
       "ImovelStorageService",
       ["setImovel"]
@@ -48,7 +54,7 @@ fdescribe('ImovelFormComponent', () => {
         { provide: Location, useValue:  locationSpy },
         { provide: Router, useValue: routerSpy },
         { provide: ImovelStorageService, useValue: imovelStorageServiceSpy },
-        { provide: Imovel }
+        { provide: Imovel, useValue: imovel }
       ]
     });
     fixture = TestBed.createComponent(ImovelFormComponent);
@@ -65,17 +71,22 @@ fdescribe('ImovelFormComponent', () => {
     expect(component.imprimeTitulo).toHaveBeenCalled();
   });
 
+  it(`#${ImovelFormComponent.prototype.validaSimulacao.name}
+      Should validate simulation`, () => {
+        spyOn(component, 'validaSimulacao').and.callThrough();
+        component.validaSimulacao();
+        expect(component.validaSimulacao).toHaveBeenCalled();
+      })
+
   it('makes expected calls', () => {
     const routerSpy: Router = fixture.debugElement.injector.get(Router);
-    spyOn(routerSpy, 'navigate').and.callThrough();
     component.rotaParaAprovacaoAprovada();
     expect(routerSpy.navigate).toHaveBeenCalled();
   });
 
   it('makes expected calls', () => {
     const routerSpy: Router = fixture.debugElement.injector.get(Router);
-    spyOn(routerSpy, 'navigate').and.callThrough();
-    component.rotaParaAprovacaoAprovada();
+    component.rotaParaAprovacaoReprovada();
     expect(routerSpy.navigate).toHaveBeenCalled();
   });
 });
