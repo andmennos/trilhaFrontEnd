@@ -20,14 +20,14 @@ export class AprovadoComponent extends RecursosBasicosService implements OnInit 
     injector: Injector,
     location: Location,
     router: Router,
-    protected imovelStorage: ImovelStorageService
+    public imovelStorageService: ImovelStorageService
     ) {
     super(injector, location, router)
    }
 
   ngOnInit(): void {
     this.geraTitulo(this.imprimeTitulo());
-    this.imovel = this.imovelStorage.getImovel();
+    this.imovel = this.imovelStorageService.getImovel();
     this.parcelaInicial = this.imovel.parcelaInicial!;
     this.valorTotalAprovado = this.imovel.valorTotalAprovado!;
   }

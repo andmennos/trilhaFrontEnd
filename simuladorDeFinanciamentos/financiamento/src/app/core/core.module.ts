@@ -18,8 +18,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SharedModule
   ],
   exports:[
-    BrowserModule,
-    BrowserAnimationsModule,
     NavbarComponent,
     SharedModule
   ]

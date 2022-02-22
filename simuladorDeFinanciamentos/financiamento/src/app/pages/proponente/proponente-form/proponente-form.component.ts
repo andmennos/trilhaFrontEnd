@@ -54,7 +54,7 @@ export class ProponenteFormComponent extends RecursosBasicosService implements O
     injector: Injector,
     location: Location,
     router: Router,
-    protected formBuilder: FormBuilder,
+    public formBuilder: FormBuilder,
 
   ){
     super(injector, location, router)
@@ -71,7 +71,7 @@ export class ProponenteFormComponent extends RecursosBasicosService implements O
 
   }
 
-  protected geraRecursoForm(){
+  public geraRecursoForm(){
     this.recursosFormulario = this.formBuilder.group({
       id: [null],
       nome: [null, [Validators.required, Validators.minLength(3), Validators.pattern('^[ A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]*$')]],
@@ -84,7 +84,7 @@ export class ProponenteFormComponent extends RecursosBasicosService implements O
     });
   }
 
-  protected botaoSalvar(){
+  public botaoSalvar(){
     const url = this.location.path();
     this.enviarForm = true;
 
@@ -93,7 +93,7 @@ export class ProponenteFormComponent extends RecursosBasicosService implements O
       return this.rota;
   }
 
-  protected criaRotaImovel(){
+  public criaRotaImovel(){
     return "/dados-do-imovel"
   }
 

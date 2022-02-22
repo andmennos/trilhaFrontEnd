@@ -21,7 +21,7 @@ export class RecursosBasicosService {
     protected router: Router
     ) {  }
 
-  protected geraTitulo(imprimePagina:string) {
+  public geraTitulo(imprimePagina:string) {
     const url = this.location.path();
 
     if (url == "/home"){

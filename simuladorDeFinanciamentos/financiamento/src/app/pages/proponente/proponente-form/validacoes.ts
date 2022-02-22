@@ -2,7 +2,7 @@ import { AbstractControl } from "@angular/forms";
 
 export class ProponenteValidacoes {
 
-  static menorIdade (control: AbstractControl){
+  static menorIdade (control: AbstractControl): any{
 
     const dt = control.parent?.get('data')?.value
 

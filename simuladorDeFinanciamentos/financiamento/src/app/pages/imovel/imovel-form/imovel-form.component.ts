@@ -10,55 +10,60 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-imovel-form',
   templateUrl: './imovel-form.component.html',
-  styleUrls: ['./imovel-form.component.scss']
+  styleUrls: ['./imovel-form.component.scss'],
 })
-export class ImovelFormComponent extends RecursosBasicosService implements OnInit {
-
-  enviarFormulario:any;
+export class ImovelFormComponent
+  extends RecursosBasicosService
+  implements OnInit
+{
+  enviarFormulario: any;
 
   imaskRenda = {
-    mask: '00000,00'
-  }
+    mask: '00000,00',
+  };
 
   imaskImovel = {
-    mask: '0000000,00'
-  }
+    mask: '0000000,00',
+  };
 
   imaskParcela = {
-    mask: '000'
-  }
+    mask: '000',
+  };
 
   constructor(
     injector: Injector,
     location: Location,
     router: Router,
     protected formBuilder: FormBuilder,
-    protected ImovelStorage: ImovelStorageService
+    protected imovelStorage: ImovelStorageService
   ) {
-    super(injector, location, router)
-   }
+    super(injector, location, router);
+  }
 
   ngOnInit(): void {
     this.geraTitulo(this.imprimeTitulo());
     this.geraRecursoForm();
   }
 
-  protected geraRecursoForm(){
+  protected geraRecursoForm() {
     this.recursosFormulario = this.formBuilder.group({
       id: [null],
       tipo: [null, [Validators.required]],
       renda: [null, [Validators.required]],
       valorImovel: [null, [Validators.required]],
-      valorEntrada: [null, [Validators.required, ImovelValidacoes.valorEntradaMinima]],
-      parcelas: [null, [Validators.required, ImovelValidacoes.maximoParcelas]]
+      valorEntrada: [
+        null,
+        [Validators.required, ImovelValidacoes.valorEntradaMinima],
+      ],
+      parcelas: [null, [Validators.required, ImovelValidacoes.maximoParcelas]],
     });
   }
 
-  imprimeTitulo():string {
-    return 'Dados do Imóvel'
+  imprimeTitulo(): string {
+    return 'Dados do Imóvel';
   }
 
-  public validaSimulacao(){
+  public validaSimulacao() {
     const imovel: Imovel = new Imovel(
       this.recursosFormulario?.get('tipo')?.value,
       this.recursosFormulario?.get('renda')?.value,
@@ -69,45 +74,45 @@ export class ImovelFormComponent extends RecursosBasicosService implements OnIni
     const percentualMinimo = 30;
     const taxaAnoNaoCorrentista = 0.08;
     // Validação Renda Mínimma
-    const valorTotalAprovado = Number(imovel.valorImovel!) - Number(imovel.valorEntrada!);
-    const comJuros = valorTotalAprovado * taxaAnoNaoCorrentista + valorTotalAprovado!;
+    const valorTotalAprovado =
+      Number(imovel.valorImovel!) - Number(imovel.valorEntrada!);
+    const comJuros =
+      valorTotalAprovado * taxaAnoNaoCorrentista + valorTotalAprovado!;
     const resultado = comJuros / Number(imovel.parcelas!);
-    const rendaMinima = Number(imovel.renda!) / 100 * percentualMinimo;
+    const rendaMinima = (Number(imovel.renda!) / 100) * percentualMinimo;
     //Validação Parcela
     const parcelaDoze = Number(imovel.parcelas) / 12;
     const taxaParcela = taxaAnoNaoCorrentista * parcelaDoze;
     const somaCem = 100 + taxaParcela;
     const dividePorCem = somaCem / 100;
     const valorTotalAprovadoMulti = valorTotalAprovado * dividePorCem;
-    const calculoFinal = valorTotalAprovadoMulti / Number(imovel.parcelas)
+    const calculoFinal = valorTotalAprovadoMulti / Number(imovel.parcelas);
 
     imovel.parcelaInicial = calculoFinal;
     imovel.valorTotalAprovado = valorTotalAprovado;
-    this.ImovelStorage.setImovel(imovel);
+    this.imovelStorage.setImovel(imovel);
 
-    if (resultado <= rendaMinima){
+    if (resultado <= rendaMinima) {
       this.aprovacao = true;
-      return this.enviarFormulario = this.botaoSalvar();
+      return (this.enviarFormulario = this.botaoSalvar());
     }
-    if (resultado > rendaMinima)
-      this.aprovacao = false;
-      return this.enviarFormulario = this.botaoSalvar();
+    if (resultado > rendaMinima) this.aprovacao = false;
+    return (this.enviarFormulario = this.botaoSalvar());
   }
 
-  protected botaoSalvar(){
-    if (this.aprovacao == true){
-      return this.rotaParaAprovacaoAprovada()
+  protected botaoSalvar() {
+    if (this.aprovacao == true) {
+      return this.rotaParaAprovacaoAprovada();
     }
-    if (this.aprovacao == false)
-      return this.rotaParaAprovacaoReprovada();
-    return "";
+    if (this.aprovacao == false) return this.rotaParaAprovacaoReprovada();
+    return '';
   }
 
-  protected rotaParaAprovacaoReprovada(){
-    return this.router.navigate(["/reprovado"]);
+  protected rotaParaAprovacaoReprovada() {
+    return this.router.navigate(['/reprovado']);
   }
 
-  protected rotaParaAprovacaoAprovada(){
-    return this.router.navigate(["/aprovado"]);
+  protected rotaParaAprovacaoAprovada() {
+    return this.router.navigate(['/aprovado']);
   }
 }
