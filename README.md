@@ -10,10 +10,10 @@
 
 ### Os seguintes temas são abordados
 
-- GIT;
+- Versionamento de Código;
 - HMLT e CSS;
 - Layouts Flex e Grid;
-- Protótipo;
+- Protótipo - Página de Contato Estilizada;
 - Angular - SPA;
 - Angular CLI;
 - Componentes;

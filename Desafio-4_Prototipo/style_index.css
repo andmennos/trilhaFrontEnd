@@ -1,0 +1,227 @@
+body {
+  background-color: #fff;
+}
+
+.cabecalho {
+  padding: 2vh;
+}
+
+.container {
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fundo {
+  position: absolute;
+  width: 45vw;
+  bottom: 0;
+  left: 0;
+}
+
+#imagem-logo {
+  width: 13vw;
+}
+
+.logo {
+  flex-grow: 1;
+  padding: 1vw 1vw 1vw 4vw;
+}
+
+.botao {
+  display: none;
+  border: none;
+  background: none;
+}
+
+.menu {
+  flex-grow: 1;
+  font-size: 1.5rem;
+}
+.menu-lista {
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  width: 800px;
+}
+
+.menu a {
+  font-family: "Barlow", sans-serif;
+  display: flex;
+  padding: 0 12px 0 12px;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #99b1c5;
+}
+
+.menu a:hover {
+  color: #950286;
+  padding: 6px 12px;
+  background-image: radial-gradient(
+      circle at 100% 100%,
+      transparent 19px,
+      #570180 19px,
+      #570180 22px,
+      transparent 22px
+    ),
+    linear-gradient(to right, #570180, #ca048d),
+    radial-gradient(
+      circle at 0% 100%,
+      transparent 19px,
+      #ca048d 19px,
+      #ca048d 22px,
+      transparent 22px
+    ),
+    linear-gradient(to bottom, #ca048d, #ca048d),
+    radial-gradient(
+      circle at 0% 0%,
+      transparent 19px,
+      #ca048d 19px,
+      #ca048d 22px,
+      transparent 22px
+    ),
+    linear-gradient(to left, #ca048d, #570180),
+    radial-gradient(
+      circle at 100% 0%,
+      transparent 19px,
+      #570180 19px,
+      #570180 22px,
+      transparent 22px
+    ),
+    linear-gradient(to top, #570180, #570180);
+  background-size: 22px 22px, calc(100% - 44px) 3px, 22px 22px,
+    3px calc(100% - 44px);
+  background-position: top left, top center, top right, center right,
+    bottom right, bottom center, bottom left, center left;
+  background-repeat: no-repeat;
+}
+
+.conteudo-principal {
+  display: grid;
+  grid-template-columns: auto auto auto 25vw 8vw;
+  grid-template-rows: auto 20vh auto auto auto;
+}
+
+.secao {
+  padding-bottom: 8vh;
+  border-bottom: 0.15rem solid #eaedf6;
+  grid-column: 3/5;
+}
+
+.secao h1 {
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 2vh;
+  text-transform: uppercase;
+  letter-spacing: 0.8vw;
+  font-size: 3.5rem;
+  text-align: right;
+  color: #570180;
+}
+
+.secao p {
+  font-family: "Barlow", sans-serif;
+  padding-left: 45vw;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  text-align: right;
+  color: #99b1c5;
+}
+
+.display-formulario {
+  padding-top: 1vh;
+  display: grid;
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.input-name,
+.input-subject,
+.input-message {
+  font-family: "Montserrat", sans-serif;
+  margin: 0.6vh;
+  padding-left: 2vw;
+  text-align: left;
+  box-shadow: 0.1vw 0.2vw 0.5vw 0.3vw #eaedf6;
+  border: 1vw;
+  border-color: #99b1c5;
+  border-radius: 0.3vw;
+}
+
+.campo-formulario {
+  display: grid;
+  margin: 1vw 0vw 0.5vw 7vw;
+}
+
+.botao-submit {
+  font-family: "Montserrat", sans-serif;
+  margin: 0 0 0 12vw;
+  padding: 0.5vh 1vw;
+  border-radius: 1.5vw;
+  font-weight: bold;
+  color: #fff;
+  background-image: linear-gradient(to left, #6a0081, #d0038c);
+}
+
+@media screen and (max-width: 800px) {
+  .conteudo-principal {
+    grid-template-columns: 5vw auto auto auto 5vw;
+    grid-template-rows: auto;
+  }
+  .fundo {
+    display: none;
+  }
+  #imagem-logo {
+    width: 30vw;
+  }
+  .botao {
+    display: flex;
+    margin: 0 1rem 0 0;
+  }
+  .menu {
+    flex-grow: 0;
+  }
+  .menu-lista {
+    display: none;
+    position: absolute;
+    background: #fff;
+    width: 20vw;
+    height: 30vh;
+    top: 12vh;
+    right: 2vw;
+    box-shadow: 0.1vw 0.2vw 0.5vw 0.3vw #eaedf6;
+    border: 1vw;
+    border-color: #99b1c5;
+    border-radius: 0.3vw;
+    padding: 0.5rem;
+  }
+  .menu-lista a {
+    padding-bottom: 2vh;
+  }
+
+  .secao {
+    grid-column: 3;
+    padding-bottom: 2vh;
+  }
+
+  .secao h1 {
+    text-align: center;
+  }
+
+  .secao p {
+    padding: 2vw;
+    text-align: right;
+  }
+  .display-formulario {
+    grid-column: 3;
+  }
+
+  .campo-formulario {
+    margin: 0 20vw;
+  }
+
+  .botao-submit {
+    position: absolute;
+    left: 30%;
+  }
+}
