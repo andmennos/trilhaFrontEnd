@@ -1,4 +1,5 @@
 import { RecursosBasicosService } from './../../shared/services/recursos-basicos.service';
+import { ProponenteService } from '../shared/proponente.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { Injector } from '@angular/core';
@@ -15,15 +16,11 @@ describe(ProponenteFormComponent.name, () => {
   let injectorSpy: jasmine.SpyObj<Injector>;
   let locationSpy: jasmine.SpyObj<Location>;
   let routerSpy: jasmine.SpyObj<Router>;
-  const proponente: Proponente = {
-    name:"",
-    profissao:"",
-    cpf:"",
-    email:"",
-    data:"",
-    cep:"",
-    cel:""
-  }
+  let proponente: jasmine.SpyObjPropertyNames<Proponente>
+  const proponenteSpy = jasmine.createSpyObj(
+    "ProponenteService",
+    ["model"]
+  );
 
   beforeEach(() => {
 
@@ -46,6 +43,7 @@ describe(ProponenteFormComponent.name, () => {
         { provide: Injector, useValue: injectorSpy },
         { provide: Location, useValue: locationSpy },
         { provide: Router, useValue: routerSpy },
+        { provide: ProponenteService, useValue: proponenteSpy },
         { provide: Proponente, useValue: proponente}
       ]
     });
@@ -60,14 +58,6 @@ describe(ProponenteFormComponent.name, () => {
   it(`modelo has default value`, () => {
     expect(component.modelo).toEqual(Proponente);
   });
-
-
-  it('makes expected calls', () => {
-    spyOn(component, 'imprimeTitulo').and.callThrough();
-    component.ngOnInit();
-    expect(component.imprimeTitulo).toHaveBeenCalled();
-  });
-
 
   it(`#${ProponenteFormComponent.prototype.botaoSalvar.name}
     makes expected calls`, () => {
@@ -90,6 +80,6 @@ describe(ProponenteFormComponent.name, () => {
       component.rota = "";
       fixture.detectChanges();
       expect(component.criaRotaImovel).toBeTruthy();
-    })
+  })
 
 });

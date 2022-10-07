@@ -4,18 +4,16 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { RecursosBasicosService } from './recursos-basicos.service';
 
-describe('RecursosBasicosService', () => {
-  //Segundo - Declara variaveis que foram ciradas nos providers criando spy let injectorSpy: jasmine.SpyObj<Injector>;
+describe(RecursosBasicosService.name, () => {
   let service: RecursosBasicosService;
   let injectorSpy: jasmine.SpyObj<Injector>;
   let locationSpy: jasmine.SpyObj<Location>;
   let routerSpy: jasmine.SpyObj<Router>;
   beforeEach(() => {
-    //Terceiro - Criar um spy Objeto |
+
     locationSpy = jasmine.createSpyObj<Location>("Location", ["path"]);
     TestBed.configureTestingModule({
       providers: [
-        //Primeiro adicionar declarações no construtor e injeta em providers no spec
         RecursosBasicosService,
         { provide: Injector, useValue: injectorSpy },
         { provide: Location, useValue: locationSpy },
@@ -29,10 +27,10 @@ describe('RecursosBasicosService', () => {
     expect(service).toBeTruthy();
   });
 
-  it("Should geraTitulo() is running", () => {
+  it(`#${RecursosBasicosService.prototype.geraTitulo.name}
+    Should geraTitulo() is running`, () => {
     const implementacaoPagina:string = "";
     service.tituloPagina = "tituloHome";
-   // spyOn<any>(locationSpy, "path").and.returnValue(true);
     service.geraTitulo(implementacaoPagina);
 
     expect(service.geraTitulo).toBeTruthy();

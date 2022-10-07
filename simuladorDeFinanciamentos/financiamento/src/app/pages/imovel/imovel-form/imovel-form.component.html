@@ -1,5 +1,5 @@
 <div autoFocus class="row mb-4">
-  <h2 tabindex="0" class="h2 border-left mx-3">
+  <h2  class="h2 border-left mx-3">
     {{tituloPagina}}
   </h2>
 </div>
@@ -14,7 +14,7 @@
           <!-- tipo -->
           <div class="form-group col-md-4">
             <label aria-label="Preencha" for="tipo" class="form-label">Preencha com o tipo do imóvel</label>
-            <select tabindex="0"
+            <select
               name="tipo"
               class="form-control"
               id="tipo"
@@ -36,7 +36,7 @@
           <!-- renda -->
           <div class="form-group col-md-4">
             <label aria-label="Preencha" for="renda" class="form-label">Preencha com sua renda mensal</label>
-            <input tabindex="0"
+            <input
               [imask]="imaskRenda"
               type="text"
               class="form-control"
@@ -76,7 +76,7 @@
           <!-- valorEntrada -->
           <div class="form-group col-md-4">
             <label for="valorEntrada" class="form-label">Entrada</label>
-            <input tabindex="0"
+            <input
               [imask]="imaskRenda"
               type="text"
               class="form-control"
@@ -99,7 +99,7 @@
           <!-- parcela -->
           <div class="form-group col-md-4">
             <label aria-label="Preencha" for="parcelas" class="form-label">Em quantas parcelas deseja parcelar?</label>
-            <input tabindex="0"
+            <input
               [imask] = "imaskParcela"
               type="text"
               class="form-control"

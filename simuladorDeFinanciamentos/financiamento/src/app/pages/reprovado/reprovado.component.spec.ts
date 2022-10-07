@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ReprovadoComponent } from './reprovado.component';
 import { Injector } from '@angular/core';
 
-describe('ReprovadoComponent', () => {
+describe(ReprovadoComponent.name, () => {
   let component: ReprovadoComponent;
   let fixture: ComponentFixture<ReprovadoComponent>;
   let injectorSpy: jasmine.SpyObj<Injector>;

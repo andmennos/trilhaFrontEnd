@@ -6,30 +6,49 @@ import { Injector } from '@angular/core';
 import { Location } from '@angular/common';
 import { ImovelStorageService } from '../imovel/shared/imovel-storage.service';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Imovel } from '../imovel/shared/imovel.model';
 import { AprovadoComponent } from './aprovado.component';
 
-fdescribe('AprovadoComponent', () => {
+xdescribe(AprovadoComponent.name, () => {
   let component: AprovadoComponent;
   let fixture: ComponentFixture<AprovadoComponent>;
-  let routerSpy: jasmine.SpyObj<Router>;
   let injectorSpy: jasmine.SpyObj<Injector>;
   let locationSpy: jasmine.SpyObj<Location>;
-  let imovelStorageServiceSpy = () => ({ getImovel: () => ({}) });
+  let routerSpy: jasmine.SpyObj<Router>;
+  let imovelStorageServiceSpy: jasmine.SpyObj<ImovelStorageService>;
+  const imovel: Imovel = {
+    tipo:"",
+    renda:"",
+    valorImovel:"",
+    valorEntrada:"",
+    parcelas:"",
+    valorTotalAprovado:0,
+    parcelaInicial:0,
+  }
 
   beforeEach(() => {
 
+    locationSpy = jasmine.createSpyObj<Location>(
+      "Location",
+      ["path"]
+    );
     routerSpy = jasmine.createSpyObj<Router>("Router", ["routerState"]);
+    imovelStorageServiceSpy = jasmine.createSpyObj<ImovelStorageService>(
+      "ImovelStorageService",
+      ["getImovel"]
+    );
 
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
       schemas: [NO_ERRORS_SCHEMA],
+      imports: [RouterTestingModule],
       declarations: [AprovadoComponent],
       providers: [
         RecursosBasicosService,
-        { provide: Router, useValue: routerSpy },
         { provide: Injector, useValue: injectorSpy },
         { provide: Location, useValue: locationSpy },
-        { provide: ImovelStorageService, useValue: imovelStorageServiceSpy }
+        { provide: Router, useValue: routerSpy },
+        { provide: ImovelStorageService, useValue: imovelStorageServiceSpy },
+        { provide: Imovel, useValue: imovel }
       ]
     });
     fixture = TestBed.createComponent(AprovadoComponent);
@@ -41,19 +60,20 @@ fdescribe('AprovadoComponent', () => {
   });
 
   it('makes expected calls', () => {
-    spyOn(component, 'imprimeTitulo').and.callThrough();
-    component.ngOnInit();
-    expect(component.imprimeTitulo).toHaveBeenCalled();
-  });
-
-  it('makes expected calls', () => {
-    const imovelStorageServiceStub: ImovelStorageService = fixture.debugElement.injector.get(
+    const imovelStorageServiceSpy: ImovelStorageService = fixture.debugElement.injector.get(
       ImovelStorageService
     );
     spyOn(component, 'imprimeTitulo').and.callThrough();
-    spyOn(imovelStorageServiceStub, 'getImovel').and.callThrough();
+    spyOn(imovelStorageServiceSpy, 'getImovel').and.callThrough();
+    fixture.detectChanges();
     component.ngOnInit();
-    expect(component.imprimeTitulo).toHaveBeenCalled();
-    expect(imovelStorageServiceStub.getImovel).toHaveBeenCalled();
+    expect(imovelStorageServiceSpy.getImovel).toHaveBeenCalled();
   });
+
+  it(`#${AprovadoComponent.prototype.imprimeTitulo.name}
+      Should trigger imprimeTitulo() when called`, () => {
+        component.imprimeTitulo();
+        expect(component.imprimeTitulo).toHaveBeenCalled();
+      }
+  )
 });

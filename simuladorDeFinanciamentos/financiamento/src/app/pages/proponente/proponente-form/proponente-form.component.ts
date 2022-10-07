@@ -94,6 +94,6 @@ export class ProponenteFormComponent extends RecursosBasicosService implements O
   }
 
   public criaRotaImovel(){
-    return this.rota;
+    return "/dados-do-imovel";
   }
 }
