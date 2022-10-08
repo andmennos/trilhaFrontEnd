@@ -1,7 +1,7 @@
 <h1>Projeto Trilha</h1>
 <h2>Trilha Front-end Angular</h2>
 <h3>
-    <img src="https://ik.imagekit.io/3mfjmziiqmi/angular_HhfLQizcz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1665174966706" alt="Logo Angular" style="width: 40%">
+    <img src="https://ik.imagekit.io/3mfjmziiqmi/angular_HhfLQizcz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1665174966706" alt="Logo Angular" style="width: 20%">
 </h3>
 
 <h2>Descrição do Projeto</h2>
